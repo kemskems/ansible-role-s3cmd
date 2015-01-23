@@ -2,6 +2,7 @@
   yum: pkg={{ item }} state=present 
   with_items:
     - python-dateutil
+    - git-core
 
 - command: git clone git://github.com/s3tools/s3cmd.git
   args:
@@ -9,3 +10,10 @@
     creates: /usr/local/src/s3cmd
 
 - file: path=/usr/local/bin/s3cmd src=/usr/local/src/s3cmd/s3cmd state=link
+
+- template:
+    src: _s3cfg.j2
+    dest: "{{ ansible_env.HOME }}/.s3cfg"
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: 0640

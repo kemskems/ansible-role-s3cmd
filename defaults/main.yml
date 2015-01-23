@@ -1,3 +1,5 @@
 ---
-
+s3cmd_access_key: 'your aws api access key'
+s3cmd_secret_key: 'your aws api secret key'
+s3cmd_bucket_location: 'ap-northeast-1'
 
