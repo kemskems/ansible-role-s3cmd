@@ -1,0 +1,11 @@
+- name: Intall python-dateutil
+  yum: pkg={{ item }} state=present 
+  with_items:
+    - python-dateutil
+
+- command: git clone git://github.com/s3tools/s3cmd.git
+  args:
+    chdir: /usr/local/src
+    creates: /usr/local/src/s3cmd
+
+- file: path=/usr/local/bin/s3cmd src=/usr/local/src/s3cmd/s3cmd state=link
