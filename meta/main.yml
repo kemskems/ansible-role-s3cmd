@@ -2,9 +2,9 @@
 dependencies: []
 
 galaxy_info:
-  author: genzouw
-  description: 'Scrit to setup s3cmd.'
-  license: "license (BSD, MIT)"
+  author: kemskems
+  description: 'Script to install s3cmd (http://s3tools.org/s3cmd)'
+  license: "MIT"
   min_ansible_version: 1.6
   platforms:
   - name: EL
