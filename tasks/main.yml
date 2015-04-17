@@ -11,13 +11,11 @@
 - name: linking s3cmd to /usr/local/bin
   file: src=/usr/local/src/s3cmd/s3cmd path=/usr/local/bin/s3cmd state=link
   sudo: yes
-  args:
-    creates: /usr/local/bin/s3cmd
 - name: writing s3cmd configuration file to home directory
   template:
     src: s3cfg.j2
-    dest: "{{ ansible_env.HOME }}/.s3cfg"
-    owner: "{{ ansible_env.USER }}"
-    group: "{{ ansible_env.USER }}"
+    dest: /home/{{ ansible_ssh_user }}/.s3cfg
+    owner: "{{ ansible_ssh_user }}"
+    group: "{{ ansible_ssh_user }}"
     mode: 0644
 
