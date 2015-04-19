@@ -1,2 +1,3 @@
-# Ignore Vagrantfile used for testing
+# Ignore vagrant related stuff used for testing
 Vagrantfile
+.vagrant
