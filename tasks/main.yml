@@ -14,8 +14,8 @@
 - name: writing s3cmd configuration file to home directory
   template:
     src: s3cfg.j2
-    dest: /home/{{ ansible_ssh_user }}/.s3cfg
-    owner: "{{ ansible_ssh_user }}"
-    group: "{{ ansible_ssh_user }}"
+    dest: /home/{{ s3cmd_exec_user }}/.s3cfg
+    owner: "{{ s3cmd_exec_user }}"
+    group: "{{ s3cmd_exec_user }}"
     mode: 0644
 
